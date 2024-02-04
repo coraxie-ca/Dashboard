@@ -1,0 +1,27 @@
+import controlP5.*;
+import processing.serial.*;
+ 
+ControlP5 cp5;
+Serial myPort;
+
+ 
+void setup() {
+  try
+  {
+    myPort = new Serial(this, "/dev/cu.usbmodem1101", 115200); // Set Port Name + Adjust baud rate as needed
+  } catch (Exception e) {
+    println("Error opening serial port: " + e.getMessage());
+  }
+ 
+}
+ 
+void serialEvent(Serial myPort) {
+  while (myPort.available() > 0) {
+    char received = myPort.readChar();
+    if (received == '1') {
+      println("acceleration!");
+    } else if (received == '0') {
+      println("stop!");
+    }
+  }
+}
