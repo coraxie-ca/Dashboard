@@ -243,3 +243,16 @@ void draw() {
   rect(0,280,width,70);
 
 }
+
+void keyPressed(){
+  if (key == CODED) {
+    if (keyCode == UP){
+      
+      value += 10;
+      myKnobA.setValue(value);
+    } else if (keyCode == DOWN){
+      value -= 10;
+      myKnobA.setValue(value);
+    }
+  }
+}
