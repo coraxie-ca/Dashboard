@@ -7,7 +7,6 @@ Slider2D s;
 Accordion accordion;
 
 Chart myChart;
-PImage img;
 
 int knobValue = 100;
 
@@ -30,7 +29,6 @@ void setup() {
   size(1200,700);
   noStroke();
   smooth();
-  img = loadImage("Rectangle_5.png");
   gui();
   
   if (isOn == true){
